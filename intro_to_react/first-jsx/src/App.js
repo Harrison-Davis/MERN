@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 import PersonCard from './components/PersonCard';
-import Person1 from './components/Person1';
-import Person2 from './components/Person2';
-import Person3 from './components/Person3';
-import Person4 from './components/Person4';
+
+
+
+
+const person1 = {
+  firstName: "Jane",
+  lastName: "Doe",
+  age: "88",
+  hairColor: "Black"
+}
+
 
 function App() {
   return (
     <div className="App">
-      <Person1 />
-      <Person2 />
-      <Person3 />
-      <Person4 />
+      <h1>Hello</h1>
+      <PersonCard firstName="Jane" lastName="Doe" age="45" hairColor="Black"/>
+      <PersonCard firstName="John" lastName="Smith" age="88" hairColor="Brown"/>
+      <PersonCard firstName="Fillmore" lastName="Millard" age="50" hairColor="Brown"/>
+      <PersonCard firstName="Maria" lastName="Smith" age="62" hairColor="Brown"/>
+
 
     </div>
   );
 }
 
 export default App;
+
+
+
 
 
