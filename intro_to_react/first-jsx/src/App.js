@@ -3,16 +3,6 @@ import './App.css';
 import PersonCard from './components/PersonCard';
 
 
-
-
-const person1 = {
-  firstName: "Jane",
-  lastName: "Doe",
-  age: "88",
-  hairColor: "Black"
-}
-
-
 function App() {
   return (
     <div className="App">
