@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 function App() {
 
@@ -8,11 +9,11 @@ function App() {
     const [ pokemon, setPokemon] = useState([]);
 
 
-
+// --------------------using fetch----------------------
     const fetchPokemon = () => {
       console.log("clicked")
 
-      fetch("https://pokeapi.co/api/v2/pokemon?offset=20&limit=808")
+      fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=808")
         .then( someResponse => {
           return someResponse.json();
         }).then(data => {
@@ -23,7 +24,20 @@ function App() {
     }
 
 
-    
+//  ---------------------using axios---------------------------
+  const axiosFetch = () => {
+    axios.get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=808")
+    .then(response => {
+      console.log(response.data.results);
+      setPokemon(response.data.results)
+    })
+    .catch(error => console.log(error))
+  }
+
+// //  --------------------useeffect-------------------------------
+//   useEffect(() => {
+//     axiosFetch()
+//   },[]) // dont put state vars that are set inside useeffect. Will create infinite loop
 
 
 
@@ -32,6 +46,7 @@ function App() {
         <h1>Pokemon Api</h1>
         <h4>fetch / Axios / useEffect()</h4>
         <button onClick={fetchPokemon}>Fetch Pokemon</button>
+        <button onClick={axiosFetch}>Axios Pokemon</button>
         <hr/>
         <div>
           {/* pokemon: {JSON.stringify(pokemon.name)} */}
@@ -51,7 +66,6 @@ function App() {
                   )
                 })
                 }
-              
             </tbody>
           </table>
         </div>
