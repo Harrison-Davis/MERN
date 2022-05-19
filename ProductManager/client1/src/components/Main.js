@@ -3,6 +3,7 @@ import axios from 'axios';
 import Form from './Form';
 import AllProducts from './AllProducts';
 import ProductDetails from './ProductDetails';
+import ProductEdit from './ProductEdit';
 import { Route, Routes, Switch} from 'react-router-dom';
 
 const Main = () => {
@@ -37,16 +38,16 @@ const Main = () => {
         <div>
             <h1>Product Manager</h1>
             
-            <Form addProduct={addProduct} />
+            
 
             <Routes>
                 
                 
 
-                <Route path="/products" element={<AllProducts allProducts={allProducts} addProduct={addProduct} />}/>
-
+                <Route path="/products" element={<><Form addProduct={addProduct} />
+                                                    <AllProducts allProducts={allProducts} addProduct={addProduct} setAllProducts={setAllProducts} /></>}/>
                 <Route path="/product/:id" element={<ProductDetails/>}/>
-
+                <Route path="/product/edit/:id" element={<ProductEdit/>}/>
             </Routes>
 
 
