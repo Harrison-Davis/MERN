@@ -1,0 +1,30 @@
+table{
+    width:504px;
+    border: solid black 2px;
+    display:flex;
+    flex-direction: column;
+}
+
+table, tbody, tr{
+    margin-bottom: 20px;
+    /* border-bottom: solid black 1px; */
+
+}
+
+table, thead, th{
+    width: 502px;
+
+}
+
+table, thead{
+    margin-right: 20px;
+    border-bottom: solid black 1px;
+
+}
+table, tbody, td{
+    margin-right: 20px;
+    border-bottom: solid black 1px;
+    border-right: solid black 1px;
+    width: 505px;
+
+}
